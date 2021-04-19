@@ -1,0 +1,8 @@
+# i18n_es.messages
+
+manager.workplan.form.label.initialTime = Tiempo de inicio:
+manager.workplan.form.label.finalTime = Tiempo de fin:
+manager.workplan.form.label.tasks = Tareas:
+manager.workplan.form.label.manager = Manager:
+manager.workplan.form.button.create = Crear Workplan
+manager.workplan.form.button.return = Volver

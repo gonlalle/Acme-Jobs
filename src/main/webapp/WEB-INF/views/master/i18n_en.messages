@@ -30,6 +30,12 @@ master.menu.anonymous = Anonymous
 master.menu.anonymous.list-shouts = Ver gritos
 master.menu.anonymous.create-shout = ¡Dar un grito!
 
+# master.menu.manager #######################################################
+
+master.menu.manager = Manager
+master.menu.manager.list-workplan = View Workplans
+master.menu.manager.create-workplan = Create a Workplan
+
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator
