@@ -1,4 +1,3 @@
-
 # i18n_en.messages
 #
 # Copyright (C) 2012-2021 Rafael Corchuelo.
@@ -65,7 +64,7 @@ master.menu.consumer.favourite-link = Favourite link
 master.menu.manager= Manager
 master.menu.manager.create-task = Create task
 master.menu.manager.list-workPlans = View workplans
-master.menu.manager.create-workplan = Create a Workplan
+master.menu.manager.create-workPlans= Create WorkPlans
 
 
 # master.menu.user-account ####################################################
@@ -123,5 +122,4 @@ master.panic.label.request = Request:
 master.panic.label.status = Status:
 master.panic.label.exceptions = Exceptions:
 master.panic.text.consult-log = Please, consult the log to see them full stack trace.
-
 

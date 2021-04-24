@@ -1,4 +1,3 @@
-
 # i18n_es.messages
 #
 # Copyright (C) 2012-2021 Rafael Corchuelo.
@@ -64,7 +63,7 @@ master.menu.consumer.favourite-link = Enlace favorito
 master.menu.manager= Mánager
 master.menu.manager.create-task = Crear tarea
 master.menu.manager.list-workPlans = Ver workplans
-master.menu.manager.create-workplan = Crear un Workplan
+master.menu.manager.create-workPlans= Crear Workplans
 
 
 # master.menu.user-account ####################################################
