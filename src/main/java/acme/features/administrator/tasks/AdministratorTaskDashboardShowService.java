@@ -1,5 +1,7 @@
 package acme.features.administrator.tasks;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,7 +34,7 @@ public class AdministratorTaskDashboardShowService implements AbstractShowServic
 			"publicTaskNumber", "privateTaskNumber", "finishedTaskNumber", "notFinishedTaskNumber", 
 			"averageOfExecutionTaskPeriod", "deviationOfExecutionTaskPeriod", "minExecutionTaskPeriod", 
 			"maxExecutionTaskPeriod", "averageOfTaskWorkload", "deviationOfTaskWorkload", 
-			"minTaskWorkload", "maxTaskWorkload");
+			"minTaskWorkload", "maxTaskWorkload","finishedTask","idTask");
 	}
 
 	@Override
@@ -53,6 +55,8 @@ public class AdministratorTaskDashboardShowService implements AbstractShowServic
 		final Double deviationOfTaskWorkload;
 		final Double minTaskWorkload;
 		final Double maxTaskWorkload;
+		final List<Double> finishedTask;
+		final List<Integer> idTask;
 
 		publicTaskNumber = this.repository.getPublicTaskNumber();
 		privateTaskNumber = this.repository.getPrivateTaskNumber();
@@ -66,7 +70,9 @@ public class AdministratorTaskDashboardShowService implements AbstractShowServic
 		deviationOfTaskWorkload = this.repository.deviationOfTaskWorkload();
 		minTaskWorkload = this.repository.minTaskWorkload();
 		maxTaskWorkload = this.repository.maxTaskWorkload();
-
+		finishedTask = this.repository.getExecutionPeriodFinishedTask();
+		idTask =  this.repository.getIdTask();
+		
 		result = new TaskDashboard();
 		result.setPublicTaskNumber(publicTaskNumber);
 		result.setPrivateTaskNumber(privateTaskNumber);
@@ -80,7 +86,8 @@ public class AdministratorTaskDashboardShowService implements AbstractShowServic
 		result.setDeviationOfTaskWorkload(deviationOfTaskWorkload);
 		result.setMinTaskWorkload(minTaskWorkload);
 		result.setMaxTaskWorkload(maxTaskWorkload);
-
+		result.setFinishedTask(finishedTask);
+		result.setIdTask(idTask);
 
 		return result;
 	}

@@ -123,7 +123,7 @@
 </table>
 
 <div id="container" class="container"></div>
-
+<div id="container2" class="container2"></div>
 <!-- Highcharts JS -->
 	<script type="text/javascript"
 		src="//code.highcharts.com/highcharts.js"></script>
@@ -173,4 +173,43 @@ Highcharts.chart('container', {
 
     }]
 });
+
+
+Highcharts.chart('container2', {
+	    chart: {
+	        type: 'line'
+	    },
+	    title: {
+	        text: 'Task DashBoard'
+	    },
+	    xAxis: {
+	        categories: <jstl:out value="${idTask}"/>,
+	        crosshair: true
+	    },
+	    yAxis: {
+	        min: 0,
+	        title: {
+	            text: 'Number of days'
+	        }
+	    },
+	    tooltip: {
+	        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+	        pointFormat: '<tr><td style="color:{series.color};padding:0"> Task {series.key}: </td>' +
+	            '<td style="padding:0"><b>{point.y} days</b></td></tr>',
+	        footerFormat: '</table>',
+	        shared: true,
+	        useHTML: true
+	    },
+	    plotOptions: {
+	        column: {
+	            pointPadding: 0.2,
+	            borderWidth: 0
+	        }
+	    },
+	    series: [{
+	        name: "tasks",
+	        data: <jstl:out value="${finishedTask}"/>
+
+	    }]
+	});
 </script>

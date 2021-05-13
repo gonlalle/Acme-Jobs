@@ -1,5 +1,7 @@
 package acme.features.administrator.tasks;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
@@ -8,8 +10,20 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface AdministratorTaskDashBoardRepository extends AbstractRepository {
 	
+	@Query("select datediff(t.finalTime, t.initialTime) from Task t where t.finalTime <= CURRENT_DATE")
+	List<Double> getExecutionPeriodFinishedTask();
+	
+	@Query("select t.id from Task t where t.finalTime <= CURRENT_DATE")
+	List<Integer> getIdTask();
+	
 	@Query("select count(t) from Task t where t.publicTask = true")
 	Long getPublicTaskNumber();
+	
+	@Query("select t.id from Task t where t.finalTime <= CURRENT_DATE")
+	List<Integer> getIdWorkPlan();
+	
+	@Query("select count(c) from ConsistsOf c group by c.workPlan")
+	Long getPublicTaskNumberByWorkPlan();
 	
 	@Query("select count(t) from Task t where t.publicTask = false")
 	Long getPrivateTaskNumber();
