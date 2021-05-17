@@ -44,5 +44,24 @@ public class TaskDashboard implements Serializable {
 	List<Double> finishedTask;
 	
 	List<Integer> idTask;
+	
+	Double avgFinishedTasks;
+	
+	List<Double> publicWeekTasks;
+	 
+	List<Double> privateWeekTasks;
+	
+	List<Long> workPlanTasksNumber;
+	
+	List<Long> workPlanTasksNumberIds;
 
+	Double avgworkPlanTasksNumber;
+	
+	List<Double> publicWorkloadTasks;
+	
+	List<Integer> publicWorkloadTasksIds;
+	
+	List<Double> privateWorkloadTasks;
+	
+	List<String> privateWorkloadTasksIds;
 }

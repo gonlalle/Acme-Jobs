@@ -1,6 +1,9 @@
 package acme.features.administrator.tasks;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,14 +37,16 @@ public class AdministratorTaskDashboardShowService implements AbstractShowServic
 			"publicTaskNumber", "privateTaskNumber", "finishedTaskNumber", "notFinishedTaskNumber", 
 			"averageOfExecutionTaskPeriod", "deviationOfExecutionTaskPeriod", "minExecutionTaskPeriod", 
 			"maxExecutionTaskPeriod", "averageOfTaskWorkload", "deviationOfTaskWorkload", 
-			"minTaskWorkload", "maxTaskWorkload","finishedTask","idTask");
+			"minTaskWorkload", "maxTaskWorkload","finishedTask","idTask","avgFinishedTasks","publicWeekTasks"
+			,"privateWeekTasks","workPlanTasksNumber","workPlanTasksNumberIds","avgworkPlanTasksNumber"
+			,"publicWorkloadTasks","publicWorkloadTasksIds","privateWorkloadTasks","privateWorkloadTasksIds");
 	}
 
 	@Override
 	public TaskDashboard findOne(final Request<TaskDashboard> request) {
 		assert request != null;
 
-		TaskDashboard result;
+		final TaskDashboard result;
 		
 		final Long publicTaskNumber;
 		final Long privateTaskNumber;
@@ -57,7 +62,61 @@ public class AdministratorTaskDashboardShowService implements AbstractShowServic
 		final Double maxTaskWorkload;
 		final List<Double> finishedTask;
 		final List<Integer> idTask;
-
+		final Double avgFinishedTasks;
+		final List<Double> publicWeekTasks;
+		final List<Double> privateWeekTasks;
+		final List<Object[]> workPlanTasksNumberQuery;
+		final List<Long> workPlanTasksNumberIds;
+		final List<Long> workPlanTasksNumber;
+		final Double avgworkPlanTasksNumber;
+		final List<Double> publicWorkloadTasks;
+		final List<Integer> publicWorkloadTasksIds;
+		final List<Double> privateWorkloadTasks;
+		final List<String> privateWorkloadTasksIds;
+		
+		Calendar calendar;
+		final Date inicioSemana;
+		final Date finSemana;
+		calendar = Calendar.getInstance();
+		calendar.set(Calendar.HOUR, 12);
+		calendar.set(Calendar.MINUTE, 0);
+		calendar.set(Calendar.SECOND, 0);
+		calendar.add(Calendar.DATE, -7);
+		//Ver que día de la semana es y según el día q sea hacer x
+		final Integer dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
+		
+		switch(dayOfWeek) {
+		case 1:
+			calendar.add(Calendar.DATE, -6);
+			break;
+		case 2:
+			break;
+		case 3:
+			calendar.add(Calendar.DATE, -1);
+			break;
+		case 4:
+			calendar.add(Calendar.DATE, -2);
+			break;
+		case 5:
+			calendar.add(Calendar.DATE, -3);
+			break;
+		case 6:
+			calendar.add(Calendar.DATE, -4);
+			break;
+		case 7:
+			calendar.add(Calendar.DATE, -5);
+			break;
+		default:
+			break;
+		}
+		
+		inicioSemana = calendar.getTime();
+		calendar.add(Calendar.DATE, 7);
+		finSemana = calendar.getTime();
+		
+		publicWeekTasks = this.repository.getTaskPublicInitialLastWeek(inicioSemana,finSemana);
+		privateWeekTasks = this.repository.getTaskPrivateInitialLastWeek(inicioSemana,finSemana);
+		
 		publicTaskNumber = this.repository.getPublicTaskNumber();
 		privateTaskNumber = this.repository.getPrivateTaskNumber();
 		finishedTaskNumber = this.repository.getFinishedTaskNumber();
@@ -72,6 +131,22 @@ public class AdministratorTaskDashboardShowService implements AbstractShowServic
 		maxTaskWorkload = this.repository.maxTaskWorkload();
 		finishedTask = this.repository.getExecutionPeriodFinishedTask();
 		idTask =  this.repository.getIdTask();
+		avgFinishedTasks =  this.repository.getExecutionPeriodFinishedAverangeTask();
+		
+		
+		workPlanTasksNumberQuery = this.repository.getWorkPlanTasksNumber();
+		workPlanTasksNumberIds = workPlanTasksNumberQuery.stream()
+			.map(x -> ((Integer) x[0]).longValue()).collect(Collectors.toList());
+		
+		workPlanTasksNumber = workPlanTasksNumberQuery.stream()
+			.map(x -> ((Long) x[1]).longValue()).collect(Collectors.toList());
+		
+		avgworkPlanTasksNumber = this.repository.getWorkPlanTasksNumberAvg();
+		
+		publicWorkloadTasks = this.repository.getPublicWorkloadTasks(inicioSemana, finSemana);
+		publicWorkloadTasksIds = this.repository.getPublicWorkloadTasksId(inicioSemana, finSemana);
+		privateWorkloadTasks = this.repository.getPrivateWorkloadTasks(inicioSemana, finSemana);
+		privateWorkloadTasksIds = this.repository.getPrivateWorkloadTasksId(inicioSemana, finSemana);
 		
 		result = new TaskDashboard();
 		result.setPublicTaskNumber(publicTaskNumber);
@@ -88,7 +163,17 @@ public class AdministratorTaskDashboardShowService implements AbstractShowServic
 		result.setMaxTaskWorkload(maxTaskWorkload);
 		result.setFinishedTask(finishedTask);
 		result.setIdTask(idTask);
-
+		result.setAvgFinishedTasks(avgFinishedTasks);
+		result.setPublicWeekTasks(publicWeekTasks);
+		result.setPrivateWeekTasks(privateWeekTasks);
+		result.setWorkPlanTasksNumber(workPlanTasksNumber);
+		result.setWorkPlanTasksNumberIds(workPlanTasksNumberIds);
+		result.setWorkPlanTasksNumberIds(workPlanTasksNumberIds);
+		result.setAvgworkPlanTasksNumber(avgworkPlanTasksNumber);
+		result.setPublicWorkloadTasks(publicWorkloadTasks);
+		result.setPublicWorkloadTasksIds(publicWorkloadTasksIds);
+		result.setPrivateWorkloadTasks(privateWorkloadTasks);
+		result.setPrivateWorkloadTasksIds(privateWorkloadTasksIds);
 		return result;
 	}
 

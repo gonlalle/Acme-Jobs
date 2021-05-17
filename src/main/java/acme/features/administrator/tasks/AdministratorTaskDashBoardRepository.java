@@ -1,5 +1,6 @@
 package acme.features.administrator.tasks;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
@@ -10,8 +11,35 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface AdministratorTaskDashBoardRepository extends AbstractRepository {
 	
+	@Query("select concat('Task ',t.id) from Task t where t.publicTask = false and t.finalTime >= ?1 and t.finalTime <= ?2")
+	List<String> getPrivateWorkloadTasksId(Date inicioSemana, Date finSemana);
+	
+	@Query("select t.workload from Task t where t.publicTask = false and t.finalTime >= ?1 and t.finalTime <= ?2")
+	List<Double> getPrivateWorkloadTasks(Date inicioSemana, Date finSemana);
+	
+	@Query("select t.id from Task t where t.publicTask = true and t.finalTime >= ?1 and t.finalTime <= ?2")
+	List<Integer> getPublicWorkloadTasksId(Date inicioSemana, Date finSemana);
+	
+	@Query("select t.workload from Task t where t.publicTask = true and t.finalTime >= ?1 and t.finalTime <= ?2")
+	List<Double> getPublicWorkloadTasks(Date inicioSemana, Date finSemana);
+	
+	@Query("select count(*)/count(distinct c.workPlan.id) from ConsistsOf c")
+	Double getWorkPlanTasksNumberAvg();
+	
+	@Query("select c.workPlan.id,count(*) from ConsistsOf c group by c.workPlan.id")
+	List<Object[]> getWorkPlanTasksNumber();
+	
+	@Query("select count(t) from Task t where t.initialTime >= ?1 and t.initialTime < ?2 and t.publicTask = true group by t.initialTime")
+	List<Double> getTaskPublicInitialLastWeek(Date inicioSemana, Date finSemana);
+	
+	@Query("select count(t) from Task t where t.initialTime >= ?1 and t.initialTime < ?2 and t.publicTask = false group by t.initialTime")
+	List<Double> getTaskPrivateInitialLastWeek(Date inicioSemana, Date finSemana);
+	
 	@Query("select datediff(t.finalTime, t.initialTime) from Task t where t.finalTime <= CURRENT_DATE")
 	List<Double> getExecutionPeriodFinishedTask();
+	
+	@Query("select avg(datediff(t.finalTime, t.initialTime)) from Task t where t.finalTime <= CURRENT_DATE")
+	Double getExecutionPeriodFinishedAverangeTask();
 	
 	@Query("select t.id from Task t where t.finalTime <= CURRENT_DATE")
 	List<Integer> getIdTask();
