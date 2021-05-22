@@ -37,9 +37,9 @@ public class AdministratorTaskDashboardShowService implements AbstractShowServic
 			"publicTaskNumber", "privateTaskNumber", "finishedTaskNumber", "notFinishedTaskNumber", 
 			"averageOfExecutionTaskPeriod", "deviationOfExecutionTaskPeriod", "minExecutionTaskPeriod", 
 			"maxExecutionTaskPeriod", "averageOfTaskWorkload", "deviationOfTaskWorkload", 
-			"minTaskWorkload", "maxTaskWorkload","finishedTask","idTask","avgFinishedTasks","publicWeekTasks"
+			"minTaskWorkload", "maxTaskWorkload","finishedTask","titleTask","avgFinishedTasks","publicWeekTasks"
 			,"privateWeekTasks","workPlanTasksNumber","workPlanTasksNumberIds","avgworkPlanTasksNumber"
-			,"publicWorkloadTasks","publicWorkloadTasksIds","privateWorkloadTasks","privateWorkloadTasksIds");
+			,"publicWorkloadTasks","publicWorkloadTasksTitle","privateWorkloadTasks","privateWorkloadTasksTitle","numberOfTasksManagerYearQuery");
 	}
 
 	@Override
@@ -61,7 +61,7 @@ public class AdministratorTaskDashboardShowService implements AbstractShowServic
 		final Double minTaskWorkload;
 		final Double maxTaskWorkload;
 		final List<Double> finishedTask;
-		final List<Integer> idTask;
+		final List<String> titleTask;
 		final Double avgFinishedTasks;
 		final List<Double> publicWeekTasks;
 		final List<Double> privateWeekTasks;
@@ -70,9 +70,11 @@ public class AdministratorTaskDashboardShowService implements AbstractShowServic
 		final List<Long> workPlanTasksNumber;
 		final Double avgworkPlanTasksNumber;
 		final List<Double> publicWorkloadTasks;
-		final List<Integer> publicWorkloadTasksIds;
+		final List<String> publicWorkloadTasksTitle;
 		final List<Double> privateWorkloadTasks;
-		final List<String> privateWorkloadTasksIds;
+		final List<String> privateWorkloadTasksTitle;
+		
+		final List<Object[]> numberOfTasksManagerYearQuery;
 		
 		Calendar calendar;
 		final Date inicioSemana;
@@ -82,6 +84,7 @@ public class AdministratorTaskDashboardShowService implements AbstractShowServic
 		calendar.set(Calendar.MINUTE, 0);
 		calendar.set(Calendar.SECOND, 0);
 		calendar.add(Calendar.DATE, -7);
+		
 		//Ver que día de la semana es y según el día q sea hacer x
 		final Integer dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
 		
@@ -130,7 +133,7 @@ public class AdministratorTaskDashboardShowService implements AbstractShowServic
 		minTaskWorkload = this.repository.minTaskWorkload();
 		maxTaskWorkload = this.repository.maxTaskWorkload();
 		finishedTask = this.repository.getExecutionPeriodFinishedTask();
-		idTask =  this.repository.getIdTask();
+		titleTask =  this.repository.getTitleTask();
 		avgFinishedTasks =  this.repository.getExecutionPeriodFinishedAverangeTask();
 		
 		
@@ -144,9 +147,13 @@ public class AdministratorTaskDashboardShowService implements AbstractShowServic
 		avgworkPlanTasksNumber = this.repository.getWorkPlanTasksNumberAvg();
 		
 		publicWorkloadTasks = this.repository.getPublicWorkloadTasks(inicioSemana, finSemana);
-		publicWorkloadTasksIds = this.repository.getPublicWorkloadTasksId(inicioSemana, finSemana);
+		publicWorkloadTasksTitle = this.repository.getPublicWorkloadTasksTitle(inicioSemana, finSemana);
 		privateWorkloadTasks = this.repository.getPrivateWorkloadTasks(inicioSemana, finSemana);
-		privateWorkloadTasksIds = this.repository.getPrivateWorkloadTasksId(inicioSemana, finSemana);
+		privateWorkloadTasksTitle = this.repository.getPrivateWorkloadTasksTitle(inicioSemana, finSemana);
+		
+		
+		numberOfTasksManagerYearQuery = this.repository.getNumberOfTasksManagerYear();
+		
 		
 		result = new TaskDashboard();
 		result.setPublicTaskNumber(publicTaskNumber);
@@ -162,7 +169,7 @@ public class AdministratorTaskDashboardShowService implements AbstractShowServic
 		result.setMinTaskWorkload(minTaskWorkload);
 		result.setMaxTaskWorkload(maxTaskWorkload);
 		result.setFinishedTask(finishedTask);
-		result.setIdTask(idTask);
+		result.setTitleTask(titleTask);
 		result.setAvgFinishedTasks(avgFinishedTasks);
 		result.setPublicWeekTasks(publicWeekTasks);
 		result.setPrivateWeekTasks(privateWeekTasks);
@@ -171,9 +178,10 @@ public class AdministratorTaskDashboardShowService implements AbstractShowServic
 		result.setWorkPlanTasksNumberIds(workPlanTasksNumberIds);
 		result.setAvgworkPlanTasksNumber(avgworkPlanTasksNumber);
 		result.setPublicWorkloadTasks(publicWorkloadTasks);
-		result.setPublicWorkloadTasksIds(publicWorkloadTasksIds);
+		result.setPublicWorkloadTasksTitle(publicWorkloadTasksTitle);
 		result.setPrivateWorkloadTasks(privateWorkloadTasks);
-		result.setPrivateWorkloadTasksIds(privateWorkloadTasksIds);
+		result.setPrivateWorkloadTasksTitle(privateWorkloadTasksTitle);
+		result.setNumberOfTasksManagerYearQuery(numberOfTasksManagerYearQuery);
 		return result;
 	}
 

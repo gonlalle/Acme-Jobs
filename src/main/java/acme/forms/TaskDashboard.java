@@ -43,7 +43,7 @@ public class TaskDashboard implements Serializable {
 	
 	List<Double> finishedTask;
 	
-	List<Integer> idTask;
+	List<String> titleTask;
 	
 	Double avgFinishedTasks;
 	
@@ -59,9 +59,11 @@ public class TaskDashboard implements Serializable {
 	
 	List<Double> publicWorkloadTasks;
 	
-	List<Integer> publicWorkloadTasksIds;
+	List<String> publicWorkloadTasksTitle;
 	
 	List<Double> privateWorkloadTasks;
 	
-	List<String> privateWorkloadTasksIds;
+	List<String> privateWorkloadTasksTitle;
+	
+	List<Object[]> numberOfTasksManagerYearQuery;
 }

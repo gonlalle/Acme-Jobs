@@ -11,14 +11,17 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface AdministratorTaskDashBoardRepository extends AbstractRepository {
 	
-	@Query("select concat('Task ',t.id) from Task t where t.publicTask = false and t.finalTime >= ?1 and t.finalTime <= ?2")
-	List<String> getPrivateWorkloadTasksId(Date inicioSemana, Date finSemana);
+	@Query("select t.manager.userAccount.username,year(t.initialTime),count(*) from Task t group by t.manager, year(t.initialTime) order by t.manager.id")
+	List<Object[]> getNumberOfTasksManagerYear();
+	
+	@Query("select t.title from Task t where t.publicTask = false and t.finalTime >= ?1 and t.finalTime <= ?2")
+	List<String> getPrivateWorkloadTasksTitle(Date inicioSemana, Date finSemana);
 	
 	@Query("select t.workload from Task t where t.publicTask = false and t.finalTime >= ?1 and t.finalTime <= ?2")
 	List<Double> getPrivateWorkloadTasks(Date inicioSemana, Date finSemana);
 	
-	@Query("select t.id from Task t where t.publicTask = true and t.finalTime >= ?1 and t.finalTime <= ?2")
-	List<Integer> getPublicWorkloadTasksId(Date inicioSemana, Date finSemana);
+	@Query("select t.title from Task t where t.publicTask = true and t.finalTime >= ?1 and t.finalTime <= ?2")
+	List<String> getPublicWorkloadTasksTitle(Date inicioSemana, Date finSemana);
 	
 	@Query("select t.workload from Task t where t.publicTask = true and t.finalTime >= ?1 and t.finalTime <= ?2")
 	List<Double> getPublicWorkloadTasks(Date inicioSemana, Date finSemana);
@@ -29,10 +32,10 @@ public interface AdministratorTaskDashBoardRepository extends AbstractRepository
 	@Query("select c.workPlan.id,count(*) from ConsistsOf c group by c.workPlan.id")
 	List<Object[]> getWorkPlanTasksNumber();
 	
-	@Query("select count(t) from Task t where t.initialTime >= ?1 and t.initialTime < ?2 and t.publicTask = true group by t.initialTime")
+	@Query("select count(t) from Task t where t.initialTime >= ?1 and t.initialTime < ?2 and t.publicTask = true group by day(t.initialTime)")
 	List<Double> getTaskPublicInitialLastWeek(Date inicioSemana, Date finSemana);
 	
-	@Query("select count(t) from Task t where t.initialTime >= ?1 and t.initialTime < ?2 and t.publicTask = false group by t.initialTime")
+	@Query("select count(case t when null then 0 else t end) from Task t where t.initialTime >= ?1 and t.initialTime < ?2 and t.publicTask = false group by day(t.initialTime)")
 	List<Double> getTaskPrivateInitialLastWeek(Date inicioSemana, Date finSemana);
 	
 	@Query("select datediff(t.finalTime, t.initialTime) from Task t where t.finalTime <= CURRENT_DATE")
@@ -41,8 +44,8 @@ public interface AdministratorTaskDashBoardRepository extends AbstractRepository
 	@Query("select avg(datediff(t.finalTime, t.initialTime)) from Task t where t.finalTime <= CURRENT_DATE")
 	Double getExecutionPeriodFinishedAverangeTask();
 	
-	@Query("select t.id from Task t where t.finalTime <= CURRENT_DATE")
-	List<Integer> getIdTask();
+	@Query("select t.title from Task t where t.finalTime <= CURRENT_DATE")
+	List<String> getTitleTask();
 	
 	@Query("select count(t) from Task t where t.publicTask = true")
 	Long getPublicTaskNumber();
