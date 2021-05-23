@@ -47,9 +47,9 @@ public class TaskDashboard implements Serializable {
 	
 	Double avgFinishedTasks;
 	
-	List<Double> publicWeekTasks;
+	List<Integer> publicWeekTasksCounts;
 	 
-	List<Double> privateWeekTasks;
+	List<Integer> privateWeekTasksCounts;
 	
 	List<Long> workPlanTasksNumber;
 	
@@ -66,4 +66,6 @@ public class TaskDashboard implements Serializable {
 	List<String> privateWorkloadTasksTitle;
 	
 	List<Object[]> numberOfTasksManagerYearQuery;
-}
+	
+	List<Object[]> tasksThisWeekWeekExecutuionPeriod;
+}		

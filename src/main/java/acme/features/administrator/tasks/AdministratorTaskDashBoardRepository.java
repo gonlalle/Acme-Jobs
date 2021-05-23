@@ -11,6 +11,9 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface AdministratorTaskDashBoardRepository extends AbstractRepository {
 	
+	@Query("select t.title,t.initialTime,t.finalTime from Task t where t.publicTask = false and t.initialTime >= ?1 and t.initialTime <= ?2")
+	List<Object[]> getTasksThisWeekWeekExecutuionPeriod(Date inicioSemana, Date finSemana);
+	
 	@Query("select t.manager.userAccount.username,year(t.initialTime),count(*) from Task t group by t.manager, year(t.initialTime) order by t.manager.id")
 	List<Object[]> getNumberOfTasksManagerYear();
 	
@@ -32,19 +35,19 @@ public interface AdministratorTaskDashBoardRepository extends AbstractRepository
 	@Query("select c.workPlan.id,count(*) from ConsistsOf c group by c.workPlan.id")
 	List<Object[]> getWorkPlanTasksNumber();
 	
-	@Query("select count(t) from Task t where t.initialTime >= ?1 and t.initialTime < ?2 and t.publicTask = true group by day(t.initialTime)")
-	List<Double> getTaskPublicInitialLastWeek(Date inicioSemana, Date finSemana);
+	@Query("select day(t.initialTime),count(t) from Task t where t.initialTime >= ?1 and t.initialTime < ?2 and t.publicTask = true group by day(t.initialTime)")
+	List<Integer[]> getTaskPublicInitialLastWeek(Date inicioSemana, Date finSemana);
 	
-	@Query("select count(case t when null then 0 else t end) from Task t where t.initialTime >= ?1 and t.initialTime < ?2 and t.publicTask = false group by day(t.initialTime)")
-	List<Double> getTaskPrivateInitialLastWeek(Date inicioSemana, Date finSemana);
+	@Query("select day(t.initialTime),count(t) from Task t where t.initialTime >= ?1 and t.initialTime < ?2 and t.publicTask = false group by day(t.initialTime)")
+	List<Integer[]> getTaskPrivateInitialLastWeek(Date inicioSemana, Date finSemana);
 	
-	@Query("select datediff(t.finalTime, t.initialTime) from Task t where t.finalTime <= CURRENT_DATE")
+	@Query("select datediff(t.finalTime, t.initialTime) from Task t where t.finalTime > CURRENT_DATE")
 	List<Double> getExecutionPeriodFinishedTask();
 	
-	@Query("select avg(datediff(t.finalTime, t.initialTime)) from Task t where t.finalTime <= CURRENT_DATE")
+	@Query("select avg(datediff(t.finalTime, t.initialTime)) from Task t where t.finalTime > CURRENT_DATE")
 	Double getExecutionPeriodFinishedAverangeTask();
 	
-	@Query("select t.title from Task t where t.finalTime <= CURRENT_DATE")
+	@Query("select t.title from Task t where t.finalTime > CURRENT_DATE")
 	List<String> getTitleTask();
 	
 	@Query("select count(t) from Task t where t.publicTask = true")

@@ -1,5 +1,7 @@
 package acme.features.administrator.tasks;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -33,13 +35,14 @@ public class AdministratorTaskDashboardShowService implements AbstractShowServic
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, 
+		request.unbind(entity, model,
 			"publicTaskNumber", "privateTaskNumber", "finishedTaskNumber", "notFinishedTaskNumber", 
 			"averageOfExecutionTaskPeriod", "deviationOfExecutionTaskPeriod", "minExecutionTaskPeriod", 
 			"maxExecutionTaskPeriod", "averageOfTaskWorkload", "deviationOfTaskWorkload", 
-			"minTaskWorkload", "maxTaskWorkload","finishedTask","titleTask","avgFinishedTasks","publicWeekTasks"
-			,"privateWeekTasks","workPlanTasksNumber","workPlanTasksNumberIds","avgworkPlanTasksNumber"
-			,"publicWorkloadTasks","publicWorkloadTasksTitle","privateWorkloadTasks","privateWorkloadTasksTitle","numberOfTasksManagerYearQuery");
+			"minTaskWorkload", "maxTaskWorkload","finishedTask","titleTask","avgFinishedTasks","publicWeekTasksCounts"
+			,"privateWeekTasksCounts","workPlanTasksNumber","workPlanTasksNumberIds","avgworkPlanTasksNumber"
+			,"publicWorkloadTasks","publicWorkloadTasksTitle","privateWorkloadTasks",
+			"privateWorkloadTasksTitle","numberOfTasksManagerYearQuery","tasksThisWeekWeekExecutuionPeriod");
 	}
 
 	@Override
@@ -63,8 +66,14 @@ public class AdministratorTaskDashboardShowService implements AbstractShowServic
 		final List<Double> finishedTask;
 		final List<String> titleTask;
 		final Double avgFinishedTasks;
-		final List<Double> publicWeekTasks;
-		final List<Double> privateWeekTasks;
+		
+		final List<Integer[]> publicWeekTasks;
+		final List<Integer> publicWeekTasksDays;
+		final List<Integer> publicWeekTasksCounts;
+		final List<Integer[]> privateWeekTasks;
+		final List<Integer> privateWeekTasksDays;
+		final List<Integer> privateWeekTasksCounts;
+		
 		final List<Object[]> workPlanTasksNumberQuery;
 		final List<Long> workPlanTasksNumberIds;
 		final List<Long> workPlanTasksNumber;
@@ -73,17 +82,17 @@ public class AdministratorTaskDashboardShowService implements AbstractShowServic
 		final List<String> publicWorkloadTasksTitle;
 		final List<Double> privateWorkloadTasks;
 		final List<String> privateWorkloadTasksTitle;
-		
 		final List<Object[]> numberOfTasksManagerYearQuery;
+		final List<Object[]> tasksThisWeekWeekExecutuionPeriodQuery;
 		
 		Calendar calendar;
-		final Date inicioSemana;
-		final Date finSemana;
+		Date inicioSemana;
+		Date finSemana;
 		calendar = Calendar.getInstance();
 		calendar.set(Calendar.HOUR, 12);
 		calendar.set(Calendar.MINUTE, 0);
 		calendar.set(Calendar.SECOND, 0);
-		calendar.add(Calendar.DATE, -7);
+		calendar.add(Calendar.DATE, -8);
 		
 		//Ver que día de la semana es y según el día q sea hacer x
 		final Integer dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
@@ -114,11 +123,33 @@ public class AdministratorTaskDashboardShowService implements AbstractShowServic
 		}
 		
 		inicioSemana = calendar.getTime();
+		final Integer lunes = calendar.get(Calendar.DATE);
 		calendar.add(Calendar.DATE, 7);
 		finSemana = calendar.getTime();
 		
 		publicWeekTasks = this.repository.getTaskPublicInitialLastWeek(inicioSemana,finSemana);
 		privateWeekTasks = this.repository.getTaskPrivateInitialLastWeek(inicioSemana,finSemana);
+		
+		final List<Integer> diasSemana = new ArrayList<Integer>(Arrays.asList(lunes,lunes+1,lunes+2,lunes+3,lunes+4,lunes+5,lunes+6));
+		List<Integer> diasSemanaQNoEstan = new ArrayList<Integer>(Arrays.asList(lunes,lunes+1,lunes+2,lunes+3,lunes+4,lunes+5,lunes+6));
+		
+		publicWeekTasksDays = publicWeekTasks.stream().map(x->x[0]).collect(Collectors.toList());
+		publicWeekTasksCounts = publicWeekTasks.stream().map(x->x[1]).collect(Collectors.toList());
+		
+		privateWeekTasksDays = privateWeekTasks.stream().map(x->x[0]).collect(Collectors.toList());
+		privateWeekTasksCounts = privateWeekTasks.stream().map(x->x[1]).collect(Collectors.toList());
+		diasSemanaQNoEstan.removeAll(publicWeekTasksDays);
+		
+		for (int i = 0; i< diasSemanaQNoEstan.size();i++) {
+			publicWeekTasksCounts.add(diasSemana.indexOf(diasSemanaQNoEstan.get(i)),0);
+		}
+		
+		diasSemanaQNoEstan = diasSemana;
+		diasSemanaQNoEstan.removeAll(privateWeekTasksDays);
+		
+		for (int i = 0; i< diasSemanaQNoEstan.size();i++) {
+			privateWeekTasksCounts.add(diasSemana.indexOf(diasSemanaQNoEstan.get(i)),0);
+		}
 		
 		publicTaskNumber = this.repository.getPublicTaskNumber();
 		privateTaskNumber = this.repository.getPrivateTaskNumber();
@@ -154,6 +185,7 @@ public class AdministratorTaskDashboardShowService implements AbstractShowServic
 		
 		numberOfTasksManagerYearQuery = this.repository.getNumberOfTasksManagerYear();
 		
+		tasksThisWeekWeekExecutuionPeriodQuery = this.repository.getTasksThisWeekWeekExecutuionPeriod(inicioSemana, finSemana);
 		
 		result = new TaskDashboard();
 		result.setPublicTaskNumber(publicTaskNumber);
@@ -171,8 +203,8 @@ public class AdministratorTaskDashboardShowService implements AbstractShowServic
 		result.setFinishedTask(finishedTask);
 		result.setTitleTask(titleTask);
 		result.setAvgFinishedTasks(avgFinishedTasks);
-		result.setPublicWeekTasks(publicWeekTasks);
-		result.setPrivateWeekTasks(privateWeekTasks);
+		result.setPublicWeekTasksCounts(publicWeekTasksCounts);
+		result.setPrivateWeekTasksCounts(privateWeekTasksCounts);
 		result.setWorkPlanTasksNumber(workPlanTasksNumber);
 		result.setWorkPlanTasksNumberIds(workPlanTasksNumberIds);
 		result.setWorkPlanTasksNumberIds(workPlanTasksNumberIds);
@@ -182,6 +214,7 @@ public class AdministratorTaskDashboardShowService implements AbstractShowServic
 		result.setPrivateWorkloadTasks(privateWorkloadTasks);
 		result.setPrivateWorkloadTasksTitle(privateWorkloadTasksTitle);
 		result.setNumberOfTasksManagerYearQuery(numberOfTasksManagerYearQuery);
+		result.setTasksThisWeekWeekExecutuionPeriod(tasksThisWeekWeekExecutuionPeriodQuery);
 		return result;
 	}
 

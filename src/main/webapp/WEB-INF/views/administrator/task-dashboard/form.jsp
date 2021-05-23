@@ -126,7 +126,7 @@
 <div id="container" class="container"></div>
 
 <h3>Execution Period of Tasks</h3>
-<p>In this chart we can see the number of days each task lasts</p>
+<p>In this chart we can see the number of days each task lasts for the tasks not finished yet</p>
 <div id="container2" class="container2"></div>
 
 <h3>Public and Private tasks started last week</h3>
@@ -142,16 +142,21 @@
 <div id="container5" class="container5"></div>
 
 <h3>Workload of private tasks</h3>
-<p>In this chart we can see the workload of the private tasks that finished last week</p>
+<p>In this chart we can see the workload of the private tasks finished last week</p>
 <div id="container6" class="container6"></div>
 
 <h3>Number of task by manager group by year</h3>
 <p>In this chart we can see the number of tasks that each manager create each year</p>
 <div id="container7" class="container7"></div>
 
+<h3>Execution Period of this week tasks</h3>
+<p>In this chart we can see the different executions period of tasks that start last week</p>
+<div id="container8" class="container8"></div>
 <!-- Highcharts JS -->
 	<script type="text/javascript"
 		src="//code.highcharts.com/highcharts.js"></script>
+	<script type="text/javascript"
+		src="//code.highcharts.com/highcharts-more.js"></script>
 
 <script type="text/javascript">
 
@@ -314,10 +319,10 @@ Highcharts.chart('container3', {
 	    },
 	    series: [{
 	        name: 'Public',
-	        data: <jstl:out value="${publicWeekTasks}"/>
+	        data: <jstl:out value="${publicWeekTasksCounts}"/>
 	    }, {
 	        name: 'Private',
-	        data: <jstl:out value="${privateWeekTasks}"/>
+	        data: <jstl:out value="${privateWeekTasksCounts}"/>
 	    }]
 	});
 	
@@ -604,5 +609,70 @@ function chartData2() {
 
 	// And map it to the format highcharts uses
 	return [series,yearsToUseList];
+}
+
+
+Highcharts.chart('container8', {
+
+		    chart: {
+		        type: 'columnrange',
+		        inverted: true
+		    },
+
+		    title: {
+		        text: ''
+		    },
+
+		    xAxis: {
+		        categories: chartData8()[1]
+		    },
+
+		    yAxis: {
+		        type: 'datetime',
+		    	labels: {
+		      format: '{value:%Y-%m-%d}',
+		    }
+		    },
+
+		    plotOptions: {
+		        columnrange: {
+		        		
+		            dataLabels: {
+		            		type: 'datetime',
+		                enabled: false,
+		                format: '{value:%Y-%m-%d}'
+		            }
+		        }
+		    },
+		    
+		    series: chartData8()[0]
+
+		});
+
+
+function chartData8() {
+	var series = [];
+	var data = [];
+	var titles = [];
+	
+	<jstl:forEach  var="id" items="${tasksThisWeekWeekExecutuionPeriod}" >
+		
+		titles.push('<jstl:out value="${id[0]}"/>');
+		
+		data.push(
+			[Date.parse('<jstl:out value="${id[1]}"/>'),Date.parse('<jstl:out value="${id[2]}"/>')]
+		);
+		
+	</jstl:forEach>
+	
+	series.push({
+		name: 'Execution Period',
+		data: data
+	});
+	
+	console.log(series);
+
+	// And map it to the format highcharts uses
+	return [series,titles];
 }
 </script>
