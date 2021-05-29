@@ -455,8 +455,8 @@
 	
 	<bean id="task23" class="acme.entities.tasks.Task">
 		<property name="title" value="Crear causas" />
-		<property name="initialTime" value="2021/5/10 10:30" />
-		<property name="finalTime" value="2021/5/11 10:30" />
+		<property name="initialTime" value="2021/5/17 10:30" />
+		<property name="finalTime" value="2021/5/18 10:30" />
 		<property name="workload" value="5" />
 		<property name="description" value="Esta tarea esta finalizada" />
 		<property name="manager" ref="manager1Manager"/>
@@ -467,8 +467,8 @@
 	
 	<bean id="task24" class="acme.entities.tasks.Task">
 		<property name="title" value="Crear donaciones" />
-		<property name="initialTime" value="2021/5/10 10:30" />
-		<property name="finalTime" value="2021/5/12 10:30" />
+		<property name="initialTime" value="2021/5/17 10:30" />
+		<property name="finalTime" value="2021/5/18 10:30" />
 		<property name="workload" value="10" />
 		<property name="description" value="Esta tarea esta finalizada" />
 		<property name="manager" ref="manager1Manager"/>
@@ -479,8 +479,8 @@
 	
 	<bean id="task25" class="acme.entities.tasks.Task">
 		<property name="title" value="Crear listados" />
-		<property name="initialTime" value="2021/5/10 10:30" />
-		<property name="finalTime" value="2021/5/11 10:30" />
+		<property name="initialTime" value="2021/5/17 10:30" />
+		<property name="finalTime" value="2021/5/18 10:30" />
 		<property name="workload" value="5" />
 		<property name="description" value="Esta tarea esta finalizada" />
 		<property name="manager" ref="manager1Manager"/>
@@ -490,8 +490,8 @@
 	
 	<bean id="task26" class="acme.entities.tasks.Task">
 		<property name="title" value="Revisar documentos" />
-		<property name="initialTime" value="2021/5/11 10:30" />
-		<property name="finalTime" value="2021/7/11 10:30" />
+		<property name="initialTime" value="2021/5/18 10:30" />
+		<property name="finalTime" value="2021/7/18 10:30" />
 		<property name="workload" value="15" />
 		<property name="description" value="Esta tarea esta finalizada" />
 		<property name="manager" ref="manager1Manager"/>
@@ -501,8 +501,8 @@
 	
 	<bean id="task27" class="acme.entities.tasks.Task">
 		<property name="title" value="Repartir futuros eventos" />
-		<property name="initialTime" value="2021/5/11 10:30" />
-		<property name="finalTime" value="2021/7/11 10:30" />
+		<property name="initialTime" value="2021/5/18 10:30" />
+		<property name="finalTime" value="2021/7/18 10:30" />
 		<property name="workload" value="5" />
 		<property name="description" value="Esta tarea esta finalizada" />
 		<property name="manager" ref="manager1Manager"/>
@@ -512,8 +512,8 @@
 	
 	<bean id="task28" class="acme.entities.tasks.Task">
 		<property name="title" value="Entrevista con clientes" />
-		<property name="initialTime" value="2021/5/11 10:30" />
-		<property name="finalTime" value="2021/5/12 10:30" />
+		<property name="initialTime" value="2021/5/18 10:30" />
+		<property name="finalTime" value="2021/5/19 10:30" />
 		<property name="workload" value="20" />
 		<property name="description" value="Esta tarea esta finalizada" />
 		<property name="manager" ref="manager1Manager"/>
@@ -523,8 +523,8 @@
 	
 		<bean id="task29" class="acme.entities.tasks.Task">
 		<property name="title" value="Repartir futuros eventos" />
-		<property name="initialTime" value="2021/5/12 10:30" />
-		<property name="finalTime" value="2021/5/13 10:30" />
+		<property name="initialTime" value="2021/5/19 10:30" />
+		<property name="finalTime" value="2021/5/20 10:30" />
 		<property name="workload" value="5" />
 		<property name="description" value="Esta tarea esta finalizada" />
 		<property name="manager" ref="manager1Manager"/>
@@ -534,8 +534,8 @@
 	
 	<bean id="task30" class="acme.entities.tasks.Task">
 		<property name="title" value="Entrevista con clientes" />
-		<property name="initialTime" value="2021/5/12 10:30" />
-		<property name="finalTime" value="2021/5/14 10:30" />
+		<property name="initialTime" value="2021/5/19 10:30" />
+		<property name="finalTime" value="2021/5/21 10:30" />
 		<property name="workload" value="20" />
 		<property name="description" value="Esta tarea esta finalizada" />
 		<property name="manager" ref="manager1Manager"/>
@@ -545,8 +545,8 @@
 	
 		<bean id="task31" class="acme.entities.tasks.Task">
 		<property name="title" value="Repartir futuros eventos" />
-		<property name="initialTime" value="2021/5/12 10:30" />
-		<property name="finalTime" value="2021/5/15 10:30" />
+		<property name="initialTime" value="2021/5/19 10:30" />
+		<property name="finalTime" value="2021/5/22 10:30" />
 		<property name="workload" value="5" />
 		<property name="description" value="Esta tarea esta finalizada" />
 		<property name="manager" ref="manager1Manager"/>
@@ -556,8 +556,8 @@
 	
 	<bean id="task32" class="acme.entities.tasks.Task">
 		<property name="title" value="Entrevista con clientes" />
-		<property name="initialTime" value="2021/5/13 10:30" />
-		<property name="finalTime" value="2021/5/16 10:30" />
+		<property name="initialTime" value="2021/5/20 10:30" />
+		<property name="finalTime" value="2021/5/23 10:30" />
 		<property name="workload" value="20" />
 		<property name="description" value="Esta tarea esta finalizada" />
 		<property name="manager" ref="manager1Manager"/>
@@ -567,8 +567,8 @@
 	
 		<bean id="task33" class="acme.entities.tasks.Task">
 		<property name="title" value="Entrevista con clientes" />
-		<property name="initialTime" value="2021/5/13 10:30" />
-		<property name="finalTime" value="2021/5/15 10:30" />
+		<property name="initialTime" value="2021/5/20 10:30" />
+		<property name="finalTime" value="2021/5/22 10:30" />
 		<property name="workload" value="20" />
 		<property name="description" value="Esta tarea esta finalizada" />
 		<property name="manager" ref="manager1Manager"/>
@@ -578,8 +578,8 @@
 	
 		<bean id="task34" class="acme.entities.tasks.Task">
 		<property name="title" value="Repartir futuros eventos" />
-		<property name="initialTime" value="2021/5/14 10:30" />
-		<property name="finalTime" value="2021/5/16 10:30" />
+		<property name="initialTime" value="2021/5/21 10:30" />
+		<property name="finalTime" value="2021/5/23 10:30" />
 		<property name="workload" value="5" />
 		<property name="description" value="Esta tarea esta finalizada" />
 		<property name="manager" ref="manager1Manager"/>
@@ -589,8 +589,8 @@
 	
 	<bean id="task35" class="acme.entities.tasks.Task">
 		<property name="title" value="Entrevista con clientes" />
-		<property name="initialTime" value="2021/5/14 10:30" />
-		<property name="finalTime" value="2021/5/15 10:30" />
+		<property name="initialTime" value="2021/5/21 10:30" />
+		<property name="finalTime" value="2021/5/22 10:30" />
 		<property name="workload" value="20" />
 		<property name="description" value="Esta tarea esta finalizada" />
 		<property name="manager" ref="manager1Manager"/>
@@ -600,7 +600,7 @@
 	
 	<bean id="task36" class="acme.entities.tasks.Task">
 		<property name="title" value="Entrevista con clientes" />
-		<property name="initialTime" value="2021/5/14 10:30" />
+		<property name="initialTime" value="2021/5/21 10:30" />
 		<property name="finalTime" value="2021/7/9 10:30" />
 		<property name="workload" value="20" />
 		<property name="description" value="Esta tarea esta finalizada" />
@@ -611,8 +611,8 @@
 	
 	<bean id="task37" class="acme.entities.tasks.Task">
 		<property name="title" value="Entrevista con clientes" />
-		<property name="initialTime" value="2021/5/15 10:30" />
-		<property name="finalTime" value="2021/5/16 10:30" />
+		<property name="initialTime" value="2021/5/22 10:30" />
+		<property name="finalTime" value="2021/5/23 10:30" />
 		<property name="workload" value="20" />
 		<property name="description" value="Esta tarea esta finalizada" />
 		<property name="manager" ref="manager1Manager"/>
@@ -622,7 +622,7 @@
 	
 	<bean id="task38" class="acme.entities.tasks.Task">
 		<property name="title" value="Entrevista con clientes" />
-		<property name="initialTime" value="2021/5/15 10:30" />
+		<property name="initialTime" value="2021/5/22 10:30" />
 		<property name="finalTime" value="2021/7/9 10:30" />
 		<property name="workload" value="20" />
 		<property name="description" value="Esta tarea esta finalizada" />
@@ -633,7 +633,7 @@
 	
 		<bean id="task39" class="acme.entities.tasks.Task">
 		<property name="title" value="Entrevista con clientes" />
-		<property name="initialTime" value="2021/5/15 10:30" />
+		<property name="initialTime" value="2021/5/22 10:30" />
 		<property name="finalTime" value="2021/7/9 10:30" />
 		<property name="workload" value="20" />
 		<property name="description" value="Esta tarea esta finalizada" />
@@ -644,7 +644,7 @@
 	
 	<bean id="task40" class="acme.entities.tasks.Task">
 		<property name="title" value="Entrevista con clientes" />
-		<property name="initialTime" value="2021/5/16 10:30" />
+		<property name="initialTime" value="2021/5/23 10:30" />
 		<property name="finalTime" value="2021/7/15 10:30" />
 		<property name="workload" value="20" />
 		<property name="description" value="Esta tarea esta finalizada" />
@@ -655,7 +655,7 @@
 	
 		<bean id="task41" class="acme.entities.tasks.Task">
 		<property name="title" value="Entrevista con clientes" />
-		<property name="initialTime" value="2021/5/16 10:30" />
+		<property name="initialTime" value="2021/5/23 10:30" />
 		<property name="finalTime" value="2021/7/15 10:30" />
 		<property name="workload" value="20" />
 		<property name="description" value="Esta tarea esta finalizada" />
@@ -666,7 +666,7 @@
 	
 	<bean id="task42" class="acme.entities.tasks.Task">
 		<property name="title" value="Entrevista con clientes" />
-		<property name="initialTime" value="2021/5/16 10:30" />
+		<property name="initialTime" value="2021/5/23 10:30" />
 		<property name="finalTime" value="2021/7/15 10:30" />
 		<property name="workload" value="20" />
 		<property name="description" value="Esta tarea esta finalizada" />
@@ -677,7 +677,7 @@
 	
 	<bean id="task43" class="acme.entities.tasks.Task">
 		<property name="title" value="Entrevista con clientes" />
-		<property name="initialTime" value="2021/5/16 10:30" />
+		<property name="initialTime" value="2021/5/23 10:30" />
 		<property name="finalTime" value="2021/7/15 10:30" />
 		<property name="workload" value="20" />
 		<property name="description" value="Esta tarea esta finalizada" />
@@ -906,6 +906,691 @@
 		<property name="publicTask" value="true" />
 	</bean>
 	
+		<bean id="task64" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2018/1/16 10:30" />
+		<property name="finalTime" value="2018/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager3Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>
+	
+		<bean id="task65" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2018/1/16 10:30" />
+		<property name="finalTime" value="2018/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager3Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>
+	
+		<bean id="task66" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2018/1/16 10:30" />
+		<property name="finalTime" value="2018/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager3Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>
+	
+		<bean id="task67" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2018/1/16 10:30" />
+		<property name="finalTime" value="2018/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager3Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>
+	
+		<bean id="task68" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2018/1/16 10:30" />
+		<property name="finalTime" value="2018/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager3Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>
+	
+		<bean id="task69" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2018/1/16 10:30" />
+		<property name="finalTime" value="2018/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager3Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>
+	
+		<bean id="task70" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2018/1/16 10:30" />
+		<property name="finalTime" value="2018/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager3Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>
+	
+		<bean id="task71" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2018/1/16 10:30" />
+		<property name="finalTime" value="2018/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager3Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>
+	
+		<bean id="task72" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2018/1/16 10:30" />
+		<property name="finalTime" value="2018/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager3Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>
+	
+		<bean id="task73" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2018/1/16 10:30" />
+		<property name="finalTime" value="2018/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager3Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>
+	
+		<bean id="task74" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2018/1/16 10:30" />
+		<property name="finalTime" value="2018/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager3Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>
+	
+		<bean id="task75" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2018/1/16 10:30" />
+		<property name="finalTime" value="2018/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager3Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>
+	
+	<bean id="task76" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2018/1/16 10:30" />
+		<property name="finalTime" value="2018/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager1Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>
+	
+	<bean id="task77" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2018/1/16 10:30" />
+		<property name="finalTime" value="2018/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager1Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>
+	
+	
+	<bean id="task78" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2018/1/16 10:30" />
+		<property name="finalTime" value="2018/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager1Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>
+	
+	<bean id="task79" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2018/1/16 10:30" />
+		<property name="finalTime" value="2018/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager1Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>
+	
+	<bean id="task80" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2018/1/16 10:30" />
+		<property name="finalTime" value="2018/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager1Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>
+	
+		<bean id="task81" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2018/1/16 10:30" />
+		<property name="finalTime" value="2018/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager1Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>
+	
+	<bean id="task82" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2018/1/16 10:30" />
+		<property name="finalTime" value="2018/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager1Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>
+	
+	<bean id="task83" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2018/1/16 10:30" />
+		<property name="finalTime" value="2018/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager1Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>
+	
+		<bean id="task84" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2018/1/16 10:30" />
+		<property name="finalTime" value="2018/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager1Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>
+	
+	<bean id="task85" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2018/1/16 10:30" />
+		<property name="finalTime" value="2018/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager1Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>
+	
+	<bean id="task86" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2018/1/16 10:30" />
+		<property name="finalTime" value="2018/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager2Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>
+	
+	<bean id="task87" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2018/1/16 10:30" />
+		<property name="finalTime" value="2018/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager2Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>
+	
+	<bean id="task88" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2018/1/16 10:30" />
+		<property name="finalTime" value="2018/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager2Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>
+	
+	<bean id="task89" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2018/1/16 10:30" />
+		<property name="finalTime" value="2018/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager2Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>
+	
+	<bean id="task90" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2019/1/16 10:30" />
+		<property name="finalTime" value="2019/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager2Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>
+	
+	<bean id="task91" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2019/1/16 10:30" />
+		<property name="finalTime" value="2019/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager2Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>
+
+	<bean id="task92" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2019/1/16 10:30" />
+		<property name="finalTime" value="2019/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager1Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>
+	
+	<bean id="task93" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2019/1/16 10:30" />
+		<property name="finalTime" value="2019/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager1Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>
+	
+		<bean id="task94" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2019/1/16 10:30" />
+		<property name="finalTime" value="2019/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager1Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>
+	
+		<bean id="task95" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2019/1/16 10:30" />
+		<property name="finalTime" value="2019/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager2Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>
+	
+		<bean id="task96" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2019/1/16 10:30" />
+		<property name="finalTime" value="2019/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager2Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>
+	
+		<bean id="task97" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2019/1/16 10:30" />
+		<property name="finalTime" value="2019/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager2Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>
+	
+	<bean id="task98" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2019/1/16 10:30" />
+		<property name="finalTime" value="2019/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager2Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>
+	
+	<bean id="task99" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2019/1/16 10:30" />
+		<property name="finalTime" value="2019/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager2Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>	
+	
+	<bean id="task101" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2020/1/16 10:30" />
+		<property name="finalTime" value="2020/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager3Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>	
+	
+		<bean id="task102" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2020/1/16 10:30" />
+		<property name="finalTime" value="2020/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager3Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>	
+	
+		<bean id="task103" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2020/1/16 10:30" />
+		<property name="finalTime" value="2020/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager3Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>	
+	
+		<bean id="task104" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2020/1/16 10:30" />
+		<property name="finalTime" value="2020/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager3Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>	
+	
+		<bean id="task105" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2020/1/16 10:30" />
+		<property name="finalTime" value="2020/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager3Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>	
+	
+		<bean id="task106" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2020/1/16 10:30" />
+		<property name="finalTime" value="2020/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager3Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>	
+	
+		<bean id="task107" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2020/1/16 10:30" />
+		<property name="finalTime" value="2020/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager3Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>	
+	
+		<bean id="task108" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2020/1/16 10:30" />
+		<property name="finalTime" value="2020/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager3Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>	
+	
+		<bean id="task109" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2020/1/16 10:30" />
+		<property name="finalTime" value="2020/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager3Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>	
+	
+		<bean id="task110" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2020/1/16 10:30" />
+		<property name="finalTime" value="2020/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager3Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>	
+	
+			<bean id="task111" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2020/1/16 10:30" />
+		<property name="finalTime" value="2020/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager3Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>	
+	
+			<bean id="task112" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2020/1/16 10:30" />
+		<property name="finalTime" value="2020/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager3Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>	
+	
+			<bean id="task113" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2020/1/16 10:30" />
+		<property name="finalTime" value="2020/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager3Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>	
+	
+			<bean id="task114" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2020/1/16 10:30" />
+		<property name="finalTime" value="2020/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager3Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>	
+	
+			<bean id="task115" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2020/1/16 10:30" />
+		<property name="finalTime" value="2020/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager3Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>	
+	
+			<bean id="task116" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2020/1/16 10:30" />
+		<property name="finalTime" value="2020/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager3Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>	
+	
+			<bean id="task117" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2020/1/16 10:30" />
+		<property name="finalTime" value="2020/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager3Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>	
+	
+			<bean id="task118" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2020/1/16 10:30" />
+		<property name="finalTime" value="2020/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager3Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>	
+	
+			<bean id="task119" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2020/1/16 10:30" />
+		<property name="finalTime" value="2020/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager3Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>	
+	
+	<bean id="task120" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2020/1/16 10:30" />
+		<property name="finalTime" value="2020/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager3Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>	
+	
+	<bean id="task121" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2020/1/16 10:30" />
+		<property name="finalTime" value="2020/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager1Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>	
+	
+	<bean id="task122" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2020/1/16 10:30" />
+		<property name="finalTime" value="2020/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager1Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>
+	
+	<bean id="task123" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2020/1/16 10:30" />
+		<property name="finalTime" value="2020/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager1Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>
+	
+	<bean id="task124" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2020/1/16 10:30" />
+		<property name="finalTime" value="2020/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager1Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>
+	
+	<bean id="task125" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2020/1/16 10:30" />
+		<property name="finalTime" value="2020/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager1Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>
+	
+	<bean id="task126" class="acme.entities.tasks.Task">
+		<property name="title" value="Entrevista con clientes" />
+		<property name="initialTime" value="2020/1/16 10:30" />
+		<property name="finalTime" value="2020/2/15 10:30" />
+		<property name="workload" value="20" />
+		<property name="description" value="Esta tarea esta finalizada" />
+		<property name="manager" ref="manager1Manager"/>
+		<property name="link" value="http://www.hola2.com" />
+		<property name="publicTask" value="true" />
+	</bean>
+	
+	
+		
 	<bean id="consistsOf01" class="acme.entities.consistsOf.ConsistsOf">
 		<property name="task" ref="task01"/>
 		<property name="workPlan" ref="workPlan01"/>

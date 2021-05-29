@@ -639,9 +639,10 @@ Highcharts.chart('container8', {
 		        		
 		            dataLabels: {
 		            		type: 'datetime',
-		                enabled: false,
+		                enabled: true,
 		                format: '{value:%Y-%m-%d}'
-		            }
+		            },
+		        	enableMouseTracking: false
 		        }
 		    },
 		    
