@@ -97,6 +97,7 @@ public class AdministratorTaskDashboardShowService implements AbstractShowServic
 		//Ver que día de la semana es y según el día q sea hacer x
 		final Integer dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
 		
+		//Obtengo el lunes de la fecha de la semana
 		switch(dayOfWeek) {
 		case 1:
 			calendar.add(Calendar.DATE, -6);
@@ -136,6 +137,8 @@ public class AdministratorTaskDashboardShowService implements AbstractShowServic
 		publicWeekTasksDays = publicWeekTasks.stream().map(x->x[0]).collect(Collectors.toList());
 		publicWeekTasksCounts = publicWeekTasks.stream().map(x->x[1]).collect(Collectors.toList());
 		
+		
+		//Relleno con 0 de aquellos días que no haya tasks
 		privateWeekTasksDays = privateWeekTasks.stream().map(x->x[0]).collect(Collectors.toList());
 		privateWeekTasksCounts = privateWeekTasks.stream().map(x->x[1]).collect(Collectors.toList());
 		diasSemanaQNoEstan.removeAll(publicWeekTasksDays);
