@@ -344,7 +344,7 @@ Highcharts.chart('container4', {
         }
     },
     tooltip: {
-        headerFormat: '<span style="font-size:10px">WorkPlan {point.key}</span><table>',
+        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
         pointFormat: '<tr><td style="color:{series.color};padding:0"> Number of tasks {series.key}: </td>' +
             '<td style="padding:0"><b>{point.y} tasks</b></td></tr>',
         footerFormat: '</table>',

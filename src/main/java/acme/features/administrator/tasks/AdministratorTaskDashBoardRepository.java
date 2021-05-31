@@ -32,7 +32,7 @@ public interface AdministratorTaskDashBoardRepository extends AbstractRepository
 	@Query("select count(*)/count(distinct c.workPlan.id) from ConsistsOf c")
 	Double getWorkPlanTasksNumberAvg();
 	
-	@Query("select c.workPlan.id,count(*) from ConsistsOf c group by c.workPlan.id")
+	@Query("select concat(c.workPlan.initialTime,' - ', c.workPlan.finalTime),count(*) from ConsistsOf c group by c.workPlan.id")
 	List<Object[]> getWorkPlanTasksNumber();
 	
 	@Query("select day(t.initialTime),count(t) from Task t where t.initialTime >= ?1 and t.initialTime < ?2 and t.publicTask = true group by day(t.initialTime)")

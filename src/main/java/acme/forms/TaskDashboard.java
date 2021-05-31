@@ -53,7 +53,7 @@ public class TaskDashboard implements Serializable {
 	
 	List<Long> workPlanTasksNumber;
 	
-	List<Long> workPlanTasksNumberIds;
+	List<String> workPlanTasksNumberIds;
 
 	Double avgworkPlanTasksNumber;
 	

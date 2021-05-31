@@ -75,7 +75,7 @@ public class AdministratorTaskDashboardShowService implements AbstractShowServic
 		final List<Integer> privateWeekTasksCounts;
 		
 		final List<Object[]> workPlanTasksNumberQuery;
-		final List<Long> workPlanTasksNumberIds;
+		final List<String> workPlanTasksNumberIds;
 		final List<Long> workPlanTasksNumber;
 		final Double avgworkPlanTasksNumber;
 		final List<Double> publicWorkloadTasks;
@@ -173,7 +173,7 @@ public class AdministratorTaskDashboardShowService implements AbstractShowServic
 		
 		workPlanTasksNumberQuery = this.repository.getWorkPlanTasksNumber();
 		workPlanTasksNumberIds = workPlanTasksNumberQuery.stream()
-			.map(x -> ((Integer) x[0]).longValue()).collect(Collectors.toList());
+			.map(x -> ((String) x[0])).collect(Collectors.toList());
 		
 		workPlanTasksNumber = workPlanTasksNumberQuery.stream()
 			.map(x -> ((Long) x[1]).longValue()).collect(Collectors.toList());
@@ -209,7 +209,6 @@ public class AdministratorTaskDashboardShowService implements AbstractShowServic
 		result.setPublicWeekTasksCounts(publicWeekTasksCounts);
 		result.setPrivateWeekTasksCounts(privateWeekTasksCounts);
 		result.setWorkPlanTasksNumber(workPlanTasksNumber);
-		result.setWorkPlanTasksNumberIds(workPlanTasksNumberIds);
 		result.setWorkPlanTasksNumberIds(workPlanTasksNumberIds);
 		result.setAvgworkPlanTasksNumber(avgworkPlanTasksNumber);
 		result.setPublicWorkloadTasks(publicWorkloadTasks);
