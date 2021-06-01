@@ -92,7 +92,7 @@ public class AdministratorTaskDashboardShowService implements AbstractShowServic
 		calendar.set(Calendar.HOUR, 12);
 		calendar.set(Calendar.MINUTE, 0);
 		calendar.set(Calendar.SECOND, 0);
-		calendar.add(Calendar.DATE, -8);
+		calendar.add(Calendar.DATE, -7);
 		
 		//Ver que día de la semana es y según el día q sea hacer x
 		final Integer dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
@@ -219,5 +219,6 @@ public class AdministratorTaskDashboardShowService implements AbstractShowServic
 		result.setTasksThisWeekWeekExecutuionPeriod(tasksThisWeekWeekExecutuionPeriodQuery);
 		return result;
 	}
+	
 
 }
